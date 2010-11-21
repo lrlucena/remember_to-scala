@@ -1,6 +1,8 @@
 tmp/**/*
 *.class
-**/*.class
+*.DS_Store
+*.THUMBS.db
+*.DESKTOP.ini
+*.thumbs.db
+*.desktop.ini
 conf/application.conf
-.DS_Store
-**/.DS_Store
