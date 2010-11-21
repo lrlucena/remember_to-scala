@@ -1,0 +1,41 @@
+/* General stylesheet file */
+
+body{
+	background-color: #fff;
+	border: none;
+	color: #333;
+	margin: 0 auto;
+	padding: 0px;
+}
+
+body, p, ol, ul, td{
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+img{
+	border: none;
+}
+
+#wrapper{
+	/*background: #FFFFFF url("../public/images/bg/contentbg.jpg") repeat-x;*/
+	margin: 0;
+	padding-top: 8px;
+	width: inherit;
+}
+
+#content{
+	height: 100%;
+	margin: 0 auto;
+	min-height: 450px;
+	width: 950px;
+}
+
+div.fill{
+	width: 100%;
+}
+
+div.clear{
+	clear: both;
+}

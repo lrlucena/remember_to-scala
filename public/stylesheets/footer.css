@@ -1,0 +1,15 @@
+/** Stylesheet for the footer **/
+
+#footer{
+	background: #056A86 url("/public/images/bg/footerbg.jpg") repeat-x;
+	font-size: 15px;
+	color: #FFFFFF;
+	height: 100px;
+	padding-top: 25px;
+}
+
+#footer-content{
+	height: 100%;
+	margin: 0 auto;
+	width: 950px;
+}

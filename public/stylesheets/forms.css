@@ -1,0 +1,9 @@
+/* Change the color of the * of the required items of a form. */
+form{
+	font-size: 15px;
+}
+
+abbr[title="required"]{
+	color: red;
+	padding-left: 2px;
+}

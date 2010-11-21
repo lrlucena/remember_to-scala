@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="description" content="Task management system." />
+	<meta name="keywords" content="rememberto, ifrn, task, management, tarefa, gerenciamento, tags" />
+	<title>remember to :: #{get 'title' /}</title>
+	
+    <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" type="text/css" href="@{'/public/stylesheets/style.css'}">
+	<link rel="stylesheet" type="text/css" href="@{'/public/stylesheets/header.css'}">
+	<link rel="stylesheet" type="text/css" href="@{'/public/stylesheets/footer.css'}">
+	<link rel="stylesheet" type="text/css" href="@{'/public/stylesheets/forms.css'}">
+	<link rel="stylesheet" type="text/css" href="@{'/public/stylesheets/fullcalendar.css'}">
+	<link rel="stylesheet" type="text/css" href="@{'/public/stylesheets/galleryview.css'}">
+	<link rel="stylesheet" type="text/css" href="@{'/public/stylesheets/navbar.css'}">
+	<link rel="stylesheet" type="text/css" href="@{'/public/stylesheets/pagination.css'}">
+	<link rel="stylesheet" type="text/css" href="@{'/public/stylesheets/tables.css'}">
+	<link rel="stylesheet" type="text/css" href="@{'/public/stylesheets/messages.css'}">
+	<link rel="stylesheet" type="text/css" href="@{'/public/stylesheets/tagcloud.css'}">
+    #{get 'styles' /}
+
+	<!-- Javascripts -->
+	<script src="@{'/public/javascripts/jquery-1.4.2.min.js'}" type="text/javascript" charset="utf-8"></script>
+	#{get 'scripts' /}
+</head>
+<body>
+	<div id="header" class="fill">
+		<div id="user-info">
+			<!--  if user_signed_in? -->
+				Hello, #{if current_user}${current_user}#{/if}! [<!-- = link_to "Logout", destroy_user_session_path -->]
+			<!--  else -->
+				<!-- = link_to "Login", new_user_session_path --> or
+				<!-- = link_to "Register", new_user_registration_path -->
+			<!--  end -->
+		</div>
+		<div id="header-content">
+			<div id="logo">
+				<!-- = link_to root_path do -->
+					<img src="/public/images/logo/logo.png">
+					<img src="/public/images/logo/logo_text.png" id="logo-text">
+				<!--  end -->
+			</div>
+			<!-- = render :partial => "menus/navbar" -->
+		</div>
+	</div>
+	<div id="wrapper">
+		<div id="content">
+			<!-- 
+						   #if breadcrumbs.items.any? and (breadcrumbs.items.last[1] != request.fullpath)
+							#	name = request.fullpath.split('/')[request.fullpath.split.size + 1]
+							#	name = (name.nil? ? controller.action_name.humanize : name.humanize)
+							#	breadcrumbs.add name, request.fullpath
+						   #end 
+		     -->
+			<!-- You are here:  # breadcrumbs.render(:format => :inline, :separator => "&rarr;") -->
+			#{if notice}<p class="notice">${notice}</p>#{/if}
+			#{if alert}<p class="alert">${alert}</p>#{/if}
+			#{doLayout /}
+		</div>
+	</div>
+	<div id="footer" >
+		<div id="footer-content">
+			<b><small>Copyright © Remember To 2010. All rights reserved.</small></b>
+		</div>
+	</div>
+</body>
+</html>

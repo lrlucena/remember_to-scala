@@ -1,0 +1,44 @@
+table.list{
+	border-spacing: 0px;
+	margin: 0px 0px 10px 0px;
+	text-align: center;
+	width: 100%;
+}
+
+table.list th{
+	padding: 4px;
+	border: none;
+	background-color: #DDD;
+	border-top: 1px solid #CCC;
+	border-bottom: 1px solid #CCC;
+	font-size: 14px;
+}
+
+table.list tr.par{
+	background-color: #EDF7FA;
+} 
+
+table.list tr td{
+	padding: 5px;
+	text-align: center;
+	font-size: 13px;
+}
+
+table.list tr:hover{
+	background-color: #f8ff9e;
+}
+
+table.list td.show_link a{
+	background: transparent url('/public/images/icons/info.png') no-repeat center left;
+	padding-left: 20px;
+}
+
+table.list td.edit_link a{
+	background: transparent url('/public/images/icons/edit.png') no-repeat center left;
+	padding-left: 20px;
+}
+
+table.list td.delete_link a{
+	background: transparent url('/public/images/icons/delete.png') no-repeat center left;
+	padding-left: 20px;
+}

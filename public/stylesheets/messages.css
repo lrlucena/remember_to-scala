@@ -1,0 +1,21 @@
+.notice {
+	background: #DEFFDD url('/public/images/icons/accept.png') no-repeat 4px center;
+	border: 2px solid #20BC00;
+	border-radius: 10px;
+	color: green;
+	padding: 5px 5px 5px 23px;
+	font-weight: bold;
+	font-size: 14px;
+	width: 100%;
+}
+
+.alert {
+	background: #FFE3E3 url('/public/images/icons/exclamation.png') no-repeat 4px center;
+	border: 2px solid #DD0000;
+	border-radius: 10px;
+	color: #DD0000;
+	padding: 5px 5px 5px 23px;
+	font-weight: bold;
+	font-size: 14px;
+	width: 100%;
+}

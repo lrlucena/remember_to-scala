@@ -1,0 +1,40 @@
+/** Stylesheet for the header **/
+
+#header{
+	background: #056A86 url('/public/images/bg/headerbg.jpg') repeat-x center;
+	color: #FFFFFF;
+	height: 180px;
+	width: 100%;
+}
+
+#header-content{
+	height: 160px;
+	margin: 0 auto;
+	width: 950px;
+}
+
+#logo{
+	height: 110px;
+	text-align: center;
+}
+
+#logo-text{
+	vertical-align: 30px;
+}
+
+#user-info{
+	border: none;
+	height: 17px;
+	padding-right: 10px;
+	padding-top: 3px;
+	text-align: right;
+}
+#header a, #header a:visited, #header a:focus, #header a:active {
+	color: #FFFFFF;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#header a:hover{
+	color: #FF4500;
+}
