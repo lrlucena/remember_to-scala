@@ -84,7 +84,11 @@ date.format=dd-MM-yyyy
 #
 # To connect to a local MySQL5 database, use:
 # db=mysql:user:pwd@database_name
-db=mysql:root:p0o9i8u7@remember_to_scala
+
+
+# db=mysql:root:p0o9i8u7@remember_to_scala
+
+
 #
 # If you need a full JDBC configuration use the following :
 # db.url=jdbc:postgresql:database_name
