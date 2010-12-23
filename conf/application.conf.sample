@@ -7,12 +7,13 @@ application.name=remember_to
 # Set to dev to enable instant reloading and other development help.
 # Otherwise set to prod.
 application.mode=dev
+%prod.application.mode=prod
 
 # Secret key
 # ~~~~~
 # The secret key is used to secure cryptographics functions
 # If you deploy your application to several instances be sure to use the same key !
-application.secret=owm6kPzkud8o4RE0OP424cwHg1FxgB4boc9la2CegvFRYs8CWGJb46fWYcz8CkEl
+application.secret=DVpSCrWTrtuO6Cdm0fkbcSlJLSHFeXJn4FMlMv3A2xP1BsqmwhDXJtqMptfgDMJ6
 
 # Additional modules
 # ~~~~~
@@ -23,7 +24,9 @@ application.secret=owm6kPzkud8o4RE0OP424cwHg1FxgB4boc9la2CegvFRYs8CWGJb46fWYcz8C
 #
 # Keep the next line as is to help the play script to manage modules.
 # ---- MODULES ----
-module.scala=${play.path}/modules/scala-0.7.3
+module.scala=${play.path}/modules/scala-0.8
+# module.crud=${play.path}/modules/crud
+# scala.enableAutoRedirect=false
 
 
 # i18n
@@ -35,12 +38,12 @@ module.scala=${play.path}/modules/scala-0.7.3
 # Date format
 # ~~~~~
 date.format=dd-MM-yyyy
-# date.format.us=MM-dd-yyyy
+# date.format.fr=dd/MM/yyyy
 
 # Server configuration
 # ~~~~~
 # If you need to change the HTTP port, uncomment this (default is set to 9000)
-# http.port=9000
+http.port=9000
 #
 # By default the server listen for HTTP on the wilcard address.
 # You can restrict this.
@@ -83,12 +86,7 @@ date.format=dd-MM-yyyy
 # db=mem
 #
 # To connect to a local MySQL5 database, use:
-# db=mysql:user:pwd@database_name
-
-
-# db=mysql:root:p0o9i8u7@remember_to_scala
-
-
+# db=mysql:user:password@remember_to_scala
 #
 # If you need a full JDBC configuration use the following :
 # db.url=jdbc:postgresql:database_name
@@ -110,7 +108,8 @@ date.format=dd-MM-yyyy
 # Specify the custom JPA dialect to use here (default to guess):
 # jpa.dialect=org.hibernate.dialect.PostgreSQLDialect
 #
-# Specify the ddl generation pattern to use (default to update, set to none to disable it):
+# Specify the ddl generation pattern to use. Set to none to disable it 
+# (default to update in DEV mode, and none in PROD mode):
 # jpa.ddl=update
 #
 # Debug SQL statements (logged using DEBUG level):
@@ -119,6 +118,9 @@ date.format=dd-MM-yyyy
 # You can even specify additional hibernate properties here:
 # hibernate.use_sql_comments=true
 # ...
+#
+# Store path for Blob content
+attachments.path=data/attachments
 
 # Memcached configuration
 # ~~~~~ 
@@ -165,10 +167,10 @@ mail.smtp=mock
 # mail.smtp.pass=
 # mail.smtp.channel=ssl
 
-# WAR options
-# ~~~~~ 
-# list the filenames to exclude from the war generation, separated by pipes (|), full matches only
-# war.exclude=.svn|.cvs
+# Jobs executor
+# ~~~~~~
+# Size of the Jobs pool
+# play.jobs.pool=10
 
 # Execution pool
 # ~~~~~
@@ -192,3 +194,6 @@ mail.smtp=mock
 %test.jpa.ddl=create-drop
 %test.mail.smtp=mock
 
+
+# Disable auto-redirect for scala. It will be the default in the 1.0 version of the scala module
+scala.enableAutoRedirect=false
