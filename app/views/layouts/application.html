@@ -24,26 +24,30 @@
 
 	<!-- Javascripts -->
 	<script src="@{'/public/javascripts/jquery-1.4.2.min.js'}" type="text/javascript" charset="utf-8"></script>
+	<script src="@{'/public/javascripts/application.js'}" type="text/javascript" charset="utf-8"></script>
+	<script src="@{'/public/javascripts/navbar.js'}" type="text/javascript" charset="utf-8"></script>
 	#{get 'scripts' /}
 </head>
 <body>
 	<!-- Comments below are Ruby on Rails code, that were copied from remember_to's Rails versio. -->
 	<div id="header" class="fill">
 		<div id="user-info">
-			<!--  if user_signed_in? -->
-				Hello, #{if currentUser}${currentUser.fullName ? currentUser.fullName : currentUser.email}#{/if}! [<!-- = link_to "Logout", destroy_user_session_path -->]
-			<!--  else -->
-				<!-- = link_to "Login", new_user_session_path --> or
-				<!-- = link_to "Register", new_user_registration_path -->
-			<!--  end -->
+			#{if currentUser}
+				Hello, ${currentUser.fullName ? currentUser.fullName : currentUser.email}! [<a href="/logout">Logout</a>]
+			#{/if}
+			#{else}
+				<a href="#">Login</a> or
+				<a href="#">Register</a>
+			#{/else}
 		</div>
 		<div id="header-content">
 			<div id="logo">
-				<!-- = link_to root_path do -->
+				<a href="/">
 					<img src="/public/images/logo/logo.png">
 					<img src="/public/images/logo/logo_text.png" id="logo-text">
-				<!--  end -->
+				</a>
 			</div>
+			#{navbar /}
 			<!-- = render :partial => "menus/navbar" -->
 		</div>
 	</div>
