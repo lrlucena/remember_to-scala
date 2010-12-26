@@ -3,9 +3,13 @@
 # ~~~~
 
 # Home page
-GET     /                                       Home.index
-GET 	/login									Authentication.login
-GET 	/logout									Authentication.logout
+GET     /                                       Application.index
+GET 	/register								Users.register
+GET 	/login									Users.login
+GET 	/logout									Users.logout
+
+
+GET 	/tasks									Tasks.list
 
 
 # Map static resources from the /app/public folder to the /public path

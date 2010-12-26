@@ -12,9 +12,13 @@ class User(
 	@Email @Required var email: String,
 
 	@Required var password: String,
+	
+	@Transient
+	//@Equals("@password")
+	var passwordConfirmation: String,
 
 	var fullName: String
-
+	
 ) extends Model {
 	// instance methods and fields with default values
 	
@@ -24,6 +28,14 @@ class User(
     var isAdmin = false
 
     override def toString = email
+
+	def username = {
+		if (this.fullName != null){
+			this.fullName
+		} else {
+			this.email
+		}
+	}
 }
 
 object User extends QueryOn[User] {
@@ -32,4 +44,5 @@ object User extends QueryOn[User] {
 	def connect(email: String, password: String) = {
         find("byEmailAndPassword", email, password).first
     }
+
 }

@@ -1,0 +1,24 @@
+#{extends 'layouts/application.html' /}
+#{set title: 'Login' /}
+<h2>Login</h2>
+<div id="login">
+	#{form @authenticate()}
+		<p>
+			<label for="email">E-mail</label><br/>
+			<input type="text" name="email" id="email" value="${flash.email}" />
+		</p>
+		<p>
+			<label for="password">Password</label><br/>
+			<input type="password" name="password" id="password" value="" />
+		</p>
+		<p>
+			<input type="checkbox" name="remember" id="remember" value="true" ${flash.remember ? 'checked="true"' : ''} />
+			<label for="remember">Remember me</label>
+		</p>
+		<p>
+			<input type="submit" id="signin" value="Login" />
+		</p>
+	#{/form}
+</div>
+<a href="/forgot_password">Forgot your password?</a><br />
+<a href="/register">Register</a>

@@ -10,12 +10,12 @@
 // 	
 // }
 // 
-// object Authentication extends Controller {
+// object Users extends Controller {
 //     
 //     def login = Template
 //     
 //     def authenticate(username: String, password: String) = {
-//         Users.connect(username, password) match {
+//         User.connect(username, password) match {
 //             case Some(u) => session.put("user", u.email)
 //                             Action(Admin.index)
 //                             
@@ -38,8 +38,8 @@
 //     
 //     @Before def check = {        
 //         session("user") match {
-//             case Some(email) => renderArgs += "user" -> Users.find("byEmail", email).first.getOrNotFound; Continue
-//             case None => Action(Authentication.login)
+//             case Some(email) => renderArgs += "user" -> User.find("byEmail", email).first.getOrNotFound; Continue
+//             case None => Action(Users.login)
 //         }
 //     }
 //     

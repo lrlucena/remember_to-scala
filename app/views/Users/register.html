@@ -1,0 +1,37 @@
+#{extends 'layouts/application.html' /}
+#{set title: 'Register' /}
+<h2>Register</h2>
+<div id="register">
+	#{form @save()}
+		<p>
+			<label for="fullname">Full name</label><br/>
+			<input type="text" name="user.fullName" id="fullName" value="${user?.fullName}" />
+			<span class="error">${errors.forKey('user.fullName')}</span>
+		</p>
+				
+		<p>
+			<label for="email">E-mail</label><br/>
+			<input type="text" name="user.email" id="email" value="${user?.email}" />
+			<span class="error">${errors.forKey('user.email')}</span>
+		</p>
+		
+		<p>
+			<label for="password">Password</label><br/>
+			<input type="password" name="user.password" id="password" value="" />
+			<span class="error">${errors.forKey('user.password')}</span>
+		</p>
+		
+		<p>
+			<label for="passwordConfirmation">Password confirmation</label><br/>
+			<input type="password" name="user.passwordConfirmation" id="password" value="" />
+			<span class="error">${errors.forKey('user.passwodConfirmation')}</span>
+		</p>
+		
+		<p>
+			<input type="submit" id="signup" value="Register" />
+		</p>
+	#{/form}
+</div>
+<a href="/forgot_password">Forgot your password?</a><br />
+<a href="/register">Register</a>
+

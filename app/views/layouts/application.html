@@ -32,12 +32,13 @@
 	<!-- Comments below are Ruby on Rails code, that were copied from remember_to's Rails versio. -->
 	<div id="header" class="fill">
 		<div id="user-info">
-			#{if currentUser}
-				Hello, ${currentUser.fullName ? currentUser.fullName : currentUser.email}! [<a href="/logout">Logout</a>]
+			#{if session["user"]}
+				<!-- connectedUser.fullName ? connectedUser.fullName : connectedUser.email -->
+				Hello, ${connectedUser.username()}! [<a href="/logout">Logout</a>]
 			#{/if}
 			#{else}
-				<a href="#">Login</a> or
-				<a href="#">Register</a>
+				<a href="/login">Login</a> or
+				<a href="/register">Register</a>
 			#{/else}
 		</div>
 		<div id="header-content">
@@ -53,14 +54,14 @@
 	</div>
 	<div id="wrapper">
 		<div id="content">
-			#{if notice}<p class="notice">${notice}</p>#{/if}
-			#{if alert}<p class="alert">${alert}</p>#{/if}
+			#{if flash.success}<p class="notice">${flash.success}</p>#{/if}
+			#{if flash.error}<p class="alert">${flash.error}</p>#{/if}
 			#{doLayout /}
 		</div>
 	</div>
 	<div id="footer" >
 		<div id="footer-content">
-			<b><small>Copyright © Remember To ${(new java.text.SimpleDateFormat("yyyy")).format(new Date())}. All rights reserved.</small></b>
+			<b><small>Copyright © Remember To ${new Date().format('yyyy')}. All rights reserved.</small></b>
 		</div>
 	</div>
 </body>
