@@ -5,3 +5,4 @@ secure.email=E-mail
 secure.password=Password
 secure.remember=Remember me
 secure.signin=Login
+validation.required=Required field

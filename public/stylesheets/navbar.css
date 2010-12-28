@@ -27,29 +27,29 @@ ul#navbar li, ul#navbar li a, ul#navbar li a:link, ul#navbar li a:visited, ul#na
 }
 
 ul#navbar li.current_tab a{
-	background: url("/public/images/navbar/navbar_current_small.png") no-repeat scroll center;
+	background: url('/public/images/navbar/navbar_current_small.png') no-repeat scroll center;
 	color: #045F7F;
 	width: 104px !important;
 }
 
 ul#navbar li.current_large a{
-	background: url("/public/images/navbar/navbar_current_large.png") no-repeat scroll center;
+	background: url('/public/images/navbar/navbar_current_large.png') no-repeat scroll center;
 	color: #045F7F;
 	width: 131px !important;
 }
 
 ul#navbar li.current_small a{
-	background: url("/public/images/navbar/navbar_current_small.png") no-repeat scroll center;
+	background: url('/public/images/navbar/navbar_current_small.png') no-repeat scroll center;
 	color: #045F7F;
 	width: 104px !important;
 }
 
 ul#navbar li.large_tab a{
-	background: url("/public/images/navbar/navbar_hover_large.png") no-repeat;
+	background: url('/public/images/navbar/navbar_hover_large.png') no-repeat;
 	width: 131px !important;
 }
 
 ul#navbar li.small_tab a{
-	background: url("/public/images/navbar/navbar_hover_small.png") no-repeat;
+	background: url('/public/images/navbar/navbar_hover_small.png') no-repeat;
 	width: 104px !important;
 }

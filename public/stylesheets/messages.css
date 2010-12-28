@@ -19,3 +19,13 @@
 	font-size: 14px;
 	width: 100%;
 }
+
+.error{
+	background-color: #FFE3E3;
+	border: 2px solid #DD0000;
+	/*border-radius: 10px;*/
+	color: #DD0000;
+	padding: 5px 5px 5px 5px;
+	font-weight: bold;
+	font-size: 12px;
+}

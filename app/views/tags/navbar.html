@@ -1,7 +1,7 @@
 <ul id="navbar">
-	<li class="small_tab"><a href="/">Home</a></li>
+	<li class="small_tab"><a href="@{Application.index}">Home</a></li>
 	#{if session["user"]}
-		<li class="small_tab"><a href="/tasks">Tasks</a></li>
+		<li class="small_tab"><a href="@{Tasks.list}">Tasks</a></li>
 		<li class="small_tab"><a href="#">Tags</a></li>
 		<li class="small_tab"><a href="#">Settings</a></li>
 	#{/if}

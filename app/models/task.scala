@@ -10,18 +10,18 @@ class Task(
 	
 	@Required var title: String, 
 	
-	@Lob @Required @MaxSize(10000) var comments: String,
+	@Lob @MaxSize(10000) var comments: String,
 	
-	@Required var beginning: Date, 
+	@Required var beginning: Datetime, 
 	
-	@Required var end: Date, 
+	@Required var end: Datetime, 
 	
-	@Required var allDay: Boolean,
-	
-	@ManyToOne var user: User
+	@Required @ManyToOne var user: User
 	
 
 ) extends Model {
+	var allDay: Boolean = false
+	
 	// instance methods
 }
 

@@ -33,17 +33,20 @@ object Users extends Controller {
 	
 	def save(@Valid user: User) = {
 		if ((user.password == user.passwordConfirmation) && (User.find("byEmail", user.email).first == None) && (user.validateAndSave())){
-			flash.success("Your were successfully registered. Log in.")
+			flash.success("You were successfully registered. Now, log in.")
 			Action(Users.login)
 		} else if (request.isAjax){
 			BadRequest
 		} else {
-			if (user.password != user.passwordConfirmation){ 
-				flash.error("Password does not match password confirmation.")
+			//flash.error("Some errors were found. Check the fields above.")
+			val errors2 = scala.collection.mutable.HashMap.empty[String,String]
+			if (user.password != user.passwordConfirmation){
+				errors2 += ("passwordConfirmation" -> "Doesn't match the password")
 			}
 			if (User.find("byEmail", user.email).first != None){
-				flash.error("Email is already in use.")
+				errors2 += ("email" -> "Already in use")
 			}
+			renderArgs += "errors2" -> errors2
 			"@register".asTemplate(user)
 		}
 	}

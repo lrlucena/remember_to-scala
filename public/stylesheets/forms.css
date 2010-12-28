@@ -7,3 +7,23 @@ abbr[title="required"]{
 	color: red;
 	padding-left: 2px;
 }
+
+label{
+	font-size: 14px;
+}
+
+input[type="submit"], input[type="button"], button{
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 20px;
+}
+
+input[type="text"], input[type="password"]{
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	width: 200px;
+}
+
+textarea{
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}

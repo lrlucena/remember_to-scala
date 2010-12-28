@@ -1,4 +1,35 @@
 #{extends 'layouts/application.html' /}
 #{set title: 'Tasks' /}
 
-<h1>hahahaha</h1>
+<h1>Tasks</h1>
+
+<a class="add_link" href="@{Tasks.form}">New task</a><br/><br/>
+
+#{ ifnot tasks.empty }
+<table class="list">
+	<tr>
+		<th>Id</th>
+		<th>Title</th>
+		<th>Beginning</th>
+		<th>End</th>
+		<th>All Day</th>
+		<th colspan="2"></th>
+	</tr>
+	#{list items:tasks, as:'task'}
+		<tr>
+			<td>${ task.id }</td>
+			<td>${ task.title }</td>
+			<td>${ task.beginning }</td>
+			<td>${ task.end }</td>
+			<td>${ task.allDay ? "Yes" : "No" }</td>
+			<td class="edit_link"><a href="/tasks/${task.id}/edit">Edit</a></td>
+			<td class="delete_link"><a href="/tasks/${task.id}?x-http-method-override=DELETE" method="POST" onclick="return confirm('Are you sure?');">Delete</a></td>
+		</tr>
+    #{/list}
+</table>
+<!--  will_paginate @tasks, :previous_label => "« Previous", :next_label => "Next »" -->
+
+#{/ifnot}
+#{else}
+	<p>No task was found.</p>
+#{/else}

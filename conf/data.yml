@@ -1,0 +1,14 @@
+User(mateus):
+    fullName:   Mateus Gomes
+    email:      mateusg.18@gmail.com
+    password:   12345
+
+User(handboy):
+    fullName:   Handerson Medeiros
+    email:      handboy@gmail.com
+    password:   12345
+
+User(aline):
+    fullName:   Aline Pereira
+    email:      aline@gmail.com
+    password:   12345

@@ -1,11 +1,19 @@
-table.list{
+table.list, #crud-list table{
 	border-spacing: 0px;
 	margin: 0px 0px 10px 0px;
 	text-align: center;
 	width: 100%;
 }
 
-table.list th{
+/*table.list th a, #crud-list table th a{
+	color: #045F7A;
+}
+
+table.list td a, #crud-list table td a{
+	color: #086090;
+}*/
+
+table.list th, #crud-list table th{
 	padding: 4px;
 	border: none;
 	background-color: #DDD;
@@ -14,31 +22,31 @@ table.list th{
 	font-size: 14px;
 }
 
-table.list tr.par{
+table.list tr.par, #crud-list table tr.par{
 	background-color: #EDF7FA;
 } 
 
-table.list tr td{
+table.list tr td, #crud-list table tr td{
 	padding: 5px;
 	text-align: center;
 	font-size: 13px;
 }
 
-table.list tr:hover{
+table.list tr:hover, #crud-list table tr:hover{
 	background-color: #f8ff9e;
 }
 
-table.list td.show_link a{
+table.list td.show_link a, #crud-list table td.show_link a{
 	background: transparent url('/public/images/icons/info.png') no-repeat center left;
 	padding-left: 20px;
 }
 
-table.list td.edit_link a{
+table.list td.edit_link a, #crud-list table td.edit_link a{
 	background: transparent url('/public/images/icons/edit.png') no-repeat center left;
 	padding-left: 20px;
 }
 
-table.list td.delete_link a{
+table.list td.delete_link a, #crud-list table td.delete_link a{
 	background: transparent url('/public/images/icons/delete.png') no-repeat center left;
 	padding-left: 20px;
 }

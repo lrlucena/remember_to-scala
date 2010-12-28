@@ -24,26 +24,27 @@
 
 	<!-- Javascripts -->
 	<script src="@{'/public/javascripts/jquery-1.4.2.min.js'}" type="text/javascript" charset="utf-8"></script>
-	<script src="@{'/public/javascripts/application.js'}" type="text/javascript" charset="utf-8"></script>
-	<script src="@{'/public/javascripts/navbar.js'}" type="text/javascript" charset="utf-8"></script>
+	<script src="/public/javascripts/plugins.js" type="text/javascript" charset="utf-8"></script>
+	<script src="@{'/public/javascripts/application.js'}" type="text/javascript" charset="utf-8"></script>	
+	<script src="/public/javascripts/navbar.js" type="text/javascript" charset="utf-8"></script>
 	#{get 'scripts' /}
 </head>
 <body>
 	<!-- Comments below are Ruby on Rails code, that were copied from remember_to's Rails versio. -->
 	<div id="header" class="fill">
 		<div id="user-info">
-			#{if session["user"]}
+			#{if session["user"] && connectedUser}
 				<!-- connectedUser.fullName ? connectedUser.fullName : connectedUser.email -->
-				Hello, ${connectedUser.username()}! [<a href="/logout">Logout</a>]
+				Hello, ${connectedUser.username()}! [<a href="@{Users.logout}">Logout</a>]
 			#{/if}
 			#{else}
-				<a href="/login">Login</a> or
-				<a href="/register">Register</a>
+				<a href="@{Users.login}">Login</a> or
+				<a href="@{Users.register}">Register</a>
 			#{/else}
 		</div>
 		<div id="header-content">
 			<div id="logo">
-				<a href="/">
+				<a href="@{Application.index}">
 					<img src="/public/images/logo/logo.png">
 					<img src="/public/images/logo/logo_text.png" id="logo-text">
 				</a>

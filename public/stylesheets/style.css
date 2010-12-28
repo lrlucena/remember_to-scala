@@ -19,7 +19,7 @@ img{
 }
 
 #wrapper{
-	/*background: #FFFFFF url("../public/images/bg/contentbg.jpg") repeat-x;*/
+	/*background: #FFFFFF url("/public/images/bg/contentbg.jpg") repeat-x;*/
 	margin: 0;
 	padding-top: 8px;
 	width: inherit;
@@ -38,4 +38,17 @@ div.fill{
 
 div.clear{
 	clear: both;
+}
+
+a.add_link{
+	background: transparent url('/public/images/icons/add.png') no-repeat center left;
+	padding-left: 20px;
+}
+
+a, a:visited, a:active, a:focus{
+	color: #086090;
+}
+
+a:hover{
+	color: #FF4500;
 }

@@ -1,0 +1,52 @@
+#{extends 'layouts/application.html' /}
+#{set title: 'Task' /}
+
+<h1>New task</h1>
+
+<div id="task">
+	#{form @save()}
+		<input type="hidden" name="task.id" value="${task?.id}">
+		<!-- 		<input type="hidden" name="task.user_id" value="${connectedUser?.id}"> -->
+		
+		<p>
+			<label for="title">Title</label><br/>
+			<input type="text" name="task.title" id="title" value="${task?.title}" />
+			#{if errors.forKey('task.title')}<span class="error">${errors.forKey('task.title')}</span>#{/if}
+		</p>
+				
+		<p>
+			<label for="comments">Comments</label><br/>
+			<textarea rows="10" cols="90" name="task.comments" id="comments">${task?.comments}</textarea>
+			#{if errors.forKey('task.comments')}<span class="error">${errors.forKey('task.comments')}</span>#{/if}
+			
+		</p>
+		<p>
+			<label for="beginning">Beginning</label><br/>
+			<input type="text" name="task.beginning" id="beginning" value="${task?.beginning?.format()}" />
+			#{if errors.forKey('task.beginning')}<span class="error">${errors.forKey('task.beginning')}</span>#{/if}
+		</p>
+		
+		<p>
+			<label for="end">End</label><br/>
+			<input type="text" name="task.end" id="end" value="${task?.end?.format()}" />
+			#{if errors.forKey('task.end')}<span class="error">${errors.forKey('task.end')}</span>#{/if}
+		</p>
+		<p>
+			<input type="checkbox" name="task.allDay" id="allDay" ${(task?.allDay && task.allDay) ? 'checked' : ''} />
+			<label for="allDay">All day?</label>
+			#{if errors.forKey('task.allDay')}<span class="error">${errors.forKey('task.allDay')}</span>#{/if}
+		</p>
+		<!-- datePicker? -->
+		
+		<p>
+			<input type="submit" id="signup" value="Save" />
+		</p>
+		
+		
+	#{/form}
+	
+	<!-- <script type="text/javascript" charset="utf-8">
+        $("#beginning").datepicker({dateFormat:'yy-mm-dd', showAnim:'fadeIn'})
+		$("#end").datepicker({dateFormat:'yy-mm-dd', showAnim:'fadeIn'})
+	</script> -->
+</div>
