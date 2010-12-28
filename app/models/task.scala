@@ -12,9 +12,9 @@ class Task(
 	
 	@Lob @MaxSize(10000) var comments: String,
 	
-	@Required var beginning: Datetime, 
+	@Required var beginning: Date, 
 	
-	@Required var end: Datetime, 
+	@Required var end: Date, 
 	
 	@Required @ManyToOne var user: User
 	
