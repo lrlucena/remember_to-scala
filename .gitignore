@@ -1,5 +1,4 @@
 tmp/**/*
-conf/application.conf
 *.class
 .DS_Store
 *.THUMBS.db
