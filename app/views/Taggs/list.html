@@ -1,0 +1,30 @@
+#{extends 'layouts/application.html' /}
+#{set title: 'Tags' /}
+
+<h1>Tags</h1>
+
+<a class="add_link" href="@{Taggs.form}">New tag</a><br/><br/>
+
+#{ ifnot tags.empty }
+<table class="list">
+	<tr>
+		<th>Id</th>
+		<th>Name</th>
+		<th colspan="2"></th>
+	</tr>
+	#{list items:tags, as:'tag'}
+		<tr>
+			<td>${ tag.id }</td>
+			<td>${ tag.name }</td>
+			<td class="edit_link"><a href="/tags/${tag.id}/edit">Edit</a></td>
+			<td class="delete_link"><a href="/tags/${tag.id}?x-http-method-override=DELETE" method="POST" onclick="return confirm('Are you sure?');">Delete</a></td>
+		</tr>
+    #{/list}
+			<!-- /tags/{tag.id}?x-http-method-override=DELETE -->
+</table>
+<!--  will_paginate @tags, :previous_label => "« Previous", :next_label => "Next »" -->
+
+#{/ifnot}
+#{else}
+	<p>No tag was found.</p>
+#{/else}

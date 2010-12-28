@@ -1,0 +1,20 @@
+#{extends 'layouts/application.html' /}
+#{set title: 'Tag' /}
+
+<h1>${tag?.id ? "Edit" : "New"} tag</h1>
+
+<div id="tag">
+	#{form @save()}
+		<input type="hidden" name="tag.id" value="${tag?.id}">
+		
+		<p>
+			<label for="name">Title</label><br/>
+			<input type="text" name="tag.name" id="name" value="${tag?.name}" />
+			#{if errors.forKey('tag.name')}<span class="error">${errors.forKey('tag.name')}</span>#{/if}
+		</p>
+		
+		<p>
+			<input type="submit" id="signup" value="Save" />
+		</p>
+	#{/form}
+</div>

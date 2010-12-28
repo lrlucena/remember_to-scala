@@ -14,9 +14,22 @@ object Tasks extends Controller with Secure with Defaults {
 	def form(id: Long) = {
 		Template("task" -> Task.findById(id).orNull)
 	}
-	
-	def save(@Valid task: Task) = {
+
+	def save(@Valid task: Task, tags: String) = {
 		task.user = connectedUser
+		task.tags = new java.util.ArrayList[Tag]()
+		tags.split(" ").foreach{ tagName: String =>
+			if (tagName != "" && tagName != " "){
+				var tagAdd = Tag.find("byNameAndUser", tagName, connectedUser).first.orNull
+				if (tagAdd == null){
+					var tagAdd = new Tag(tagName, connectedUser)
+					tagAdd.save()
+				}
+				if (!task.tags.contains(tagAdd)){
+					task.tags.add(tagAdd)
+				}
+			}
+		}
 		if (task.validateAndSave()){
 			flash.success("Task saved successfully.")
 			Action(Tasks.list)
@@ -31,4 +44,7 @@ object Tasks extends Controller with Secure with Defaults {
 		flash.success("Task deleted successfully.")
 		Action(list)
 	}
+	
+	// Tag.findByNameAndUser("escola", u)
+	
 }

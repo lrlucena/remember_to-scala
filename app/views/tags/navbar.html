@@ -2,8 +2,8 @@
 	<li class="small_tab"><a href="@{Application.index}">Home</a></li>
 	#{if session["user"]}
 		<li class="small_tab"><a href="@{Tasks.list}">Tasks</a></li>
-		<li class="small_tab"><a href="#">Tags</a></li>
+		<li class="small_tab"><a href="@{Taggs.list}">Tags</a></li>
 		<li class="small_tab"><a href="#">Settings</a></li>
 	#{/if}
-	<li class="small_tab"><a href="#">About</a></li>
+	<li class="small_tab"><a href="@{Application.about}">About</a></li>
 </ul>

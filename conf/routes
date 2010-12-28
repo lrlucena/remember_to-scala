@@ -15,6 +15,14 @@ GET  	/tasks/{id}/edit						Tasks.form
 POST 	/tasks/save								Tasks.save
 DELETE  /tasks/{id}								Tasks.delete
 
+GET		/tags									Taggs.list
+GET		/tags/new								Taggs.form
+GET  	/tags/{id}/edit							Taggs.form
+POST 	/tags/save								Taggs.save
+DELETE  /tags/{id}								Taggs.delete
+
+GET 	/about									Application.about
+
 
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public

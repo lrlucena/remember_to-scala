@@ -1,7 +1,7 @@
 #{extends 'layouts/application.html' /}
 #{set title: 'Task' /}
 
-<h1>New task</h1>
+<h1>${task?.id ? "Edit" : "New"} task</h1>
 
 <div id="task">
 	#{form @save()}
@@ -36,7 +36,12 @@
 			<label for="allDay">All day?</label>
 			#{if errors.forKey('task.allDay')}<span class="error">${errors.forKey('task.allDay')}</span>#{/if}
 		</p>
-		<!-- datePicker? -->
+		
+		<p>
+			<label for="tags">Tags</label><br/>
+			<input type="text" name="tags" id="tags" value="${task?.tags ? task.tags.toString().replace(',', '').replace('[', '').replace(']', '') : ''}" /><br/>
+			<small>Use whitespaces to separate. ex.: computing linux mac</small>
+		</p>
 		
 		<p>
 			<input type="submit" id="signup" value="Save" />

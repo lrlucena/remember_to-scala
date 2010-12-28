@@ -18,9 +18,11 @@ class Task(
 	
 	@Required @ManyToOne var user: User
 	
-
 ) extends Model {
 	var allDay: Boolean = false
+	
+	@ManyToMany(cascade=Array(CascadeType.ALL))
+	var tags: JList[Tag] = new ArrayList[Tag]
 	
 	// instance methods
 }

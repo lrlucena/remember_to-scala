@@ -14,7 +14,6 @@ class User(
 	@Required var password: String,
 	
 	@Transient
-	//@Equals("@password")
 	var passwordConfirmation: String,
 
 	var fullName: String
@@ -24,6 +23,9 @@ class User(
 	
 	@OneToMany(mappedBy="user", cascade=Array(CascadeType.ALL))
 	var tasks: JList[Task] = new ArrayList[Task]
+	
+	@OneToMany(mappedBy="user", cascade=Array(CascadeType.ALL))
+	var tags: JList[Tag] = new ArrayList[Tag]
 	
     var isAdmin = false
 

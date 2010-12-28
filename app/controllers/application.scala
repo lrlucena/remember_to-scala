@@ -37,6 +37,10 @@ object Application extends Controller with Defaults {
 	def index = {
 		Template()
 	}
+	
+	def about = {
+		Template()
+	}
 }
 
 
